@@ -66,6 +66,7 @@
     ?>
     </table>
     <div id="commands-container">
+      <form method="post" action="">
         <table id="colors-container">
           <thead>
             <th colspan="4"><h3>Colores</h3></th>
@@ -92,31 +93,30 @@
             <td class="color-light-green"><input type='submit' name='color' value='color-light-green'/></td>
             <td class="color-black"><input type='submit' name='color' value='color-black'/></td>
             <td class="color-turquoise"><input type='submit' name='color' value='color-turquoise'/></td>
-            <td class="color-brown"><input type='submit' name='color' value='color-brown'/></td>
+            <td class="color-brown"><input type='submit' name='color' value='cp'/></td>
           </tr>
         </table>
-        <form method="post" action="">
-          <table id="keys-container">
-            <thead>
-              <th colspan="3"><h3>Movimientos</h3></th>
-            </thead>
-            <tr>
-              <td></td>
-              <td class="key"><input type="submit" name="move" value="W"/></td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="key"><input type="submit" name="move" value="A"/></td></td>
-              <td class="key"><input type="submit" name="move" value="OK"/></td></td>
-              <td class="key"><input type="submit" name="move" value="S"/></td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="key"><input type="submit" name="move" value="D"/></td></td>
-              <td></td>
-            </tr>
-          </table>
-        </form>
+        <table id="keys-container">
+          <thead>
+            <th colspan="3"><h3>Movimientos</h3></th>
+          </thead>
+          <tr>
+            <td></td>
+            <td class="key"><input type="submit" name="move" value="W"/></td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="key"><input type="submit" name="move" value="A"/></td></td>
+            <td class="key"><input type="submit" name="move" value="OK"/></td></td>
+            <td class="key"><input type="submit" name="move" value="S"/></td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="key"><input type="submit" name="move" value="D"/></td></td>
+            <td></td>
+          </tr>
+        </table>
+      </form>
     </div>
   </div>
 </body>

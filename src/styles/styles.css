@@ -5,8 +5,9 @@ body{
 input {
   background: none;
   border: none;
-  color: transparent;
   font-size: 0;
+  width: 35px;
+  height: 35px;
 }
 
 .ui-container{
@@ -37,7 +38,7 @@ input {
 }
 
 #colors-container td{
-  width: 20px;
+  width: 35px;
   height: 35px;
   border: black 1px solid;
 }
