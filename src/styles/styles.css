@@ -8,6 +8,7 @@ input {
   font-size: 0;
   width: 35px;
   height: 35px;
+  outline: none;
 }
 
 .ui-container{
@@ -40,7 +41,7 @@ input {
 #colors-container td{
   width: 35px;
   height: 35px;
-  border: black 1px solid;
+  border-radius: 50px 50px;
 }
 
 #keys-container{
@@ -63,6 +64,19 @@ input {
   -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
   box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+}
+
+#current-position-title{
+  margin-left: 20px;
+  text-align: center;
+  vertical-align: center;
+}
+
+#current-position{
+  margin-left: 20px;
+  text-align: center;
+  vertical-align: center;
+  color: coral;
 }
 
 .color-default{

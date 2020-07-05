@@ -13,7 +13,7 @@
         Descomentar la función para realizar la creación inicial.
         Luego volver a comentar :P
       */
-      // createGrill(32, 32, "color-blue");
+      //createGrill(32, 32, "color-white");
 
       // Nos traemos todas las filas de la DB que dio por resultado nuestra query.
       $squares = getAllSquares();
@@ -93,7 +93,7 @@
             <td class="color-light-green"><input type='submit' name='color' value='color-light-green'/></td>
             <td class="color-black"><input type='submit' name='color' value='color-black'/></td>
             <td class="color-turquoise"><input type='submit' name='color' value='color-turquoise'/></td>
-            <td class="color-brown"><input type='submit' name='color' value='cp'/></td>
+            <td class="color-brown"><input type='submit' name='color' value='color-brown'/></td>
           </tr>
         </table>
         <table id="keys-container">
@@ -117,6 +117,14 @@
           </tr>
         </table>
       </form>
+      <div>
+        <h3 id="current-position-title">Posición actual: </h3>
+      </div>
+      <?php
+      $currentPosition = getCurrentPosition();
+
+      echo "<h4 id='current-position'>( X => " . $currentPosition['x_axis'] . ", Y => " . $currentPosition['y_axis'] . ")</h4>";
+      ?>
     </div>
   </div>
 </body>
