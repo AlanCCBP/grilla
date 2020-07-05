@@ -1,0 +1,27 @@
+body {
+
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-verde{
+  background-color: green;
+}
+
+.color-rojo{
+  background-color: red;
+}
+
+.color-amarillo{
+  width: 50px;
+  height: 50px;
+  background-color: yellow;
+}
+
+.color-azul{
+  background-color: blue;
+}

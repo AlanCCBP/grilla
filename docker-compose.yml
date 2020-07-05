@@ -1,0 +1,46 @@
+version: "3.8"
+services:
+  grill-nginx:
+    container_name: grill-nginx
+    image: nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./src/:/var/www/html/
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - grill-net
+
+  grill-db:
+    container_name: grill-db
+    image: mariadb
+    restart: unless-stopped
+    tty: true
+    environment:
+      MYSQL_DATABASE: grilldb
+      MYSQL_USER: alan
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mariadb:/var/lib/mysql/
+    networks:
+      - grill-net
+
+  grill-php-fpm:
+    container_name: grill-php-fpm
+    build: ./php-fpm
+    volumes:
+      - ./src/:/var/www/html/
+    expose:
+      - "9000"
+    networks:
+      - grill-net
+
+networks:
+  grill-net:
+    driver: bridge

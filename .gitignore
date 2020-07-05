@@ -1,0 +1,4 @@
+mariadb/
+nginx/
+php-fpm/
+.DS_Store
