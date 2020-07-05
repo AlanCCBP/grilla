@@ -1,31 +1,129 @@
 body{
-
+  background-color: gainsboro;
 }
 
-td{
-  width: 20px;
-  height: 20px;
+input {
+  background: none;
+  border: none;
+  color: transparent;
+  font-size: 0;
+}
+
+.ui-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#commands-container{
+  display: flex;
+  flex-direction: column;
+}
+
+#keys-container input {
+  color: white;
+  font-size: 12px;
+}
+
+#square-container td{
+  width: 10px;
+  height: 15px;
   border: black 1px solid;
 }
 
+#colors-container{
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#colors-container td{
+  width: 20px;
+  height: 35px;
+  border: black 1px solid;
+}
+
+#keys-container{
+  margin-left: 20px;
+}
+
+#keys-container td{
+  text-align: center;
+  vertical-align: center;
+}
+
+.key{
+  width: 3rem;
+  height: 3rem;
+  border: black solid 1px;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bolder;
+  border-radius: 10px 10px;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+}
+
 .color-default{
-  background-color: white;
+  background-color: whitesmoke;
 }
 
-.color-verde{
-  background-color: green;
+.color-dark-green{
+  background-color: darkgreen;
 }
 
-.color-rojo{
-  background-color: red;
+.color-red{
+  background-color: indianred;
 }
 
-.color-amarillo{
-  width: 50px;
-  height: 50px;
-  background-color: yellow;
+.color-yellow{
+  background-color: lightyellow;
 }
 
-.color-azul{
-  background-color: blue;
+.color-blue{
+  background-color: steelblue;
+}
+
+.color-gray{
+  background-color: gray;
+}
+
+.color-dark-magenta{
+  background-color: darkmagenta;
+}
+
+.color-coral{
+  background-color: coral;
+}
+
+.color-aquamarine{
+  background-color: aquamarine;
+}
+
+.color-deep-pink{
+  background-color: deeppink;
+}
+
+.color-gold{
+  background-color: gold;
+}
+
+.color-indigo{
+  background-color: indigo;
+}
+
+.color-light-green{
+  background-color: lightgreen;
+}
+
+.color-black{
+  background-color: black;
+}
+
+.color-turquoise{
+  background-color: turquoise;
+}
+
+.color-brown{
+  background-color: brown;
 }

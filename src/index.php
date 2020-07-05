@@ -4,8 +4,8 @@
   <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-  <div class="table-container">
-    <table>
+  <div class="ui-container">
+    <table id="square-container">
     <?php
       require ('./php/functions.php');
 
@@ -13,7 +13,7 @@
         Descomentar la función para realizar la creación inicial.
         Luego volver a comentar :P
       */
-      // createGrill(32, 32, "color-default");
+      // createGrill(32, 32, "color-blue");
 
       // Nos traemos todas las filas de la DB que dio por resultado nuestra query.
       $squares = getAllSquares();
@@ -65,6 +65,59 @@
       echo '</tr>';
     ?>
     </table>
+    <div id="commands-container">
+        <table id="colors-container">
+          <thead>
+            <th colspan="4"><h3>Colores</h3></th>
+          </thead>
+          <tr>
+            <td class="color-default"><input type='submit' name='color' value='color-default'/></td>
+            <td class="color-dark-green"><input type='submit' name='color' value='color-dark-green'/></td>
+            <td class="color-red"><input type='submit' name='color' value='color-red'/></td>
+            <td class="color-yellow"><input type='submit' name='color' value='color-yellow'/></td>
+          </tr>
+          <tr>
+            <td class="color-blue"><input type='submit' name='color' value='color-blue'/></td>
+            <td class="color-gray"><input type='submit' name='color' value='color-gray'/></td>
+            <td class="color-dark-magenta"><input type='submit' name='color' value='color-dark-magenta'/></td>
+            <td class="color-coral"><input type='submit' name='color' value='color-coral'/></td>
+          </tr>
+          <tr>
+            <td class="color-aquamarine"><input type='submit' name='color' value='color-aquamarine'/></td>
+            <td class="color-deep-pink"><input type='submit' name='color' value='color-deep-pink'/></td>
+            <td class="color-gold"><input type='submit' name='color' value='color-gold'/></td>
+            <td class="color-indigo"><input type='submit' name='color' value='color-indigo'/></td>
+          </tr>
+          <tr>
+            <td class="color-light-green"><input type='submit' name='color' value='color-light-green'/></td>
+            <td class="color-black"><input type='submit' name='color' value='color-black'/></td>
+            <td class="color-turquoise"><input type='submit' name='color' value='color-turquoise'/></td>
+            <td class="color-brown"><input type='submit' name='color' value='color-brown'/></td>
+          </tr>
+        </table>
+        <form method="post" action="">
+          <table id="keys-container">
+            <thead>
+              <th colspan="3"><h3>Movimientos</h3></th>
+            </thead>
+            <tr>
+              <td></td>
+              <td class="key"><input type="submit" name="move" value="W"/></td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="key"><input type="submit" name="move" value="A"/></td></td>
+              <td class="key"><input type="submit" name="move" value="OK"/></td></td>
+              <td class="key"><input type="submit" name="move" value="S"/></td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="key"><input type="submit" name="move" value="D"/></td></td>
+              <td></td>
+            </tr>
+          </table>
+        </form>
+    </div>
   </div>
 </body>
 </html>
