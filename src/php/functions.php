@@ -13,19 +13,31 @@ function createGrill($xCount, $yCount, $defaultColor) {
     }
   }
 
-  // Insertar
   $aQuery = 'INSERT INTO grillinfo (x_axis, y_axis, color_class) VALUES ' . implode(',', $grill) . ';';
-
-  // Actualizar
-  //$aQuery = 'UPDATE grillinfo SET color_class = "color-green" WHERE x_axis = 4 AND y_axis = 2';
-
-  // Traer / Seleccionar
-  //$aQuery = 'SELECT color_class FROM grillinfo WHERE x_axis = 4 AND y_axis = 2';
-
-  // Eliminar
-  //$aQuery = 'DELETE FROM grillinfo WHERE x_axis = 4 AND y_axis = 2';
-
   $conn->getConnection()->query($aQuery);
 
+}
+
+function getAllSquares() {
+
+  $conn = new GrillDB();
+
+  /*
+    Obtenemos todos los datos de la grilla, ordenados, ya que nos va a servir
+    para procesarlos más fácilmente luego en el foreach.
+    En este caso, está ordenado DESCendentemente para que el (0,0) nos quede
+    abajo a la izquierda, y el (31,31) arriba a la derecha, en la tabla que
+    estaremos generando, sino me mareo jaja.
+  */
+
+  $aQuery = 'SELECT x_axis, y_axis, color_class FROM grillinfo ORDER BY y_axis DESC;';
+  $rows = $conn->getConnection()->query($aQuery);
+  $results = array();
+
+  while($aRow = $rows->fetch_assoc()) {
+    $results[] = $aRow;
+  }
+
+  return $results;
 }
 ?>

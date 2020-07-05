@@ -1,11 +1,15 @@
-body {
+body{
 
 }
 
-.table-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+td{
+  width: 20px;
+  height: 20px;
+  border: black 1px solid;
+}
+
+.color-default{
+  background-color: white;
 }
 
 .color-verde{

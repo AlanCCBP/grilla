@@ -1,9 +1,9 @@
 <?php
 
 class GrillDB {
-  private $host = 'localhost';
-  private $dbName = 'db';
-  private $dbUser = 'agus';
+  private $host = 'grill-db';
+  private $dbName = 'grilldb';
+  private $dbUser = 'alan';
   private $dbPass = 'root';
   private $port = 3306;
 
