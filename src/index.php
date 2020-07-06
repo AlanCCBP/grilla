@@ -26,6 +26,12 @@
       $currentYAxis = 0;
 
       /*
+        Obtenemos la posición actual para saber cuál de los cuadrados tiene que
+        tener el borde resaltado, así le mostramos al usuario dónde está parado.
+      */
+      $currentPosition = getCurrentPosition();
+      echo $currentPosition['color_class'];
+      /*
         Abrimos la primera etiqueta que va a crear una table row (fila).
         La vamos a cerrar a medida que vayamos completando la creación de los TD
         de cada fila.
@@ -47,14 +53,34 @@
           que este registro ya pertenece a la fila siguiente y debemos cerrar el
           table row (TR) actual para crear uno nuevo y hacer lo mismo.
         */
+
         if ($aSquare['y_axis'] == $currentYAxis){
-          // El cuadrado pertenece al eje de Y actual, entonces creamos otro TD.
-          echo '<td class="' . $aSquare['color_class'] . '"></td>';
+          /*
+            El cuadrado pertenece al eje de Y actual, entonces creamos otro TD.
+            Por otro lado, si las coordenadas de la posición actual coinciden con
+            la de alguna de los cuadrados (debería coincidir con exactamente uno),
+            entonces le agregamos el id selected-square, que le agrega el borde
+            rojo alrededor.
+          */
+          if ($aSquare['x_axis'] == $currentPosition['x_axis'] &&
+              $aSquare['y_axis'] == $currentPosition['y_axis']) {
+            echo '<td id="selected-square" class="' . $aSquare['color_class'] . '"></td>';
+          } else {
+            echo '<td class="' . $aSquare['color_class'] . '"></td>';
+          }
         } else {
-          // El cuadrado pertenece al próximo eje de Y, entonces cerramos el TR
-          // actual, abrimos un nuevo TR, y finalmente agregamos el cuadrado (el TD).
+          /*
+            El cuadrado pertenece al próximo eje de Y, entonces cerramos el TR
+            actual, abrimos un nuevo TR, y finalmente agregamos el cuadrado (el TD).
+          */
           $currentYAxis = $aSquare['y_axis'];
-          echo '</tr><tr><td class="' . $aSquare['color_class'] . '"></td>';
+
+          if ($aSquare['x_axis'] == $currentPosition['x_axis'] &&
+              $aSquare['y_axis'] == $currentPosition['y_axis']) {
+            echo '</tr><tr><td id="selected-square" class="' . $aSquare['color_class'] . '"></td>';
+          } else {
+            echo '</tr><tr><td class="' . $aSquare['color_class'] . '"></td>';
+          }
         }
       }
 
@@ -102,17 +128,23 @@
           </thead>
           <tr>
             <td></td>
-            <td class="key"><input type="submit" name="move" value="W"/></td></td>
+            <td class="key"><input type="submit" name="move" value="W"/></td>
             <td></td>
           </tr>
           <tr>
-            <td class="key"><input type="submit" name="move" value="A"/></td></td>
-            <td class="key"><input type="submit" name="move" value="OK"/></td></td>
-            <td class="key"><input type="submit" name="move" value="S"/></td></td>
+            <td class="key"><input type="submit" name="move" value="A"/></td>
+            <?php
+              /*
+                A continuación seteamos el color que acabamos de seleccionar,
+                como background color del botón que, al presionarlo, aplica el color al cuadrado.
+              */
+              echo "<td class='key " . $currentPosition['selected_color'] . "'><input type='submit' name='move' value='OK'/></td></td>";
+            ?>
+            <td class="key"><input type="submit" name="move" value="D"/></td>
           </tr>
           <tr>
             <td></td>
-            <td class="key"><input type="submit" name="move" value="D"/></td></td>
+            <td class="key"><input type="submit" name="move" value="S"/></td>
             <td></td>
           </tr>
         </table>
@@ -121,8 +153,6 @@
         <h3 id="current-position-title">Posición actual: </h3>
       </div>
       <?php
-      $currentPosition = getCurrentPosition();
-
       echo "<h4 id='current-position'>( X => " . $currentPosition['x_axis'] . ", Y => " . $currentPosition['y_axis'] . ")</h4>";
       ?>
     </div>

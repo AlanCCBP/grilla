@@ -53,6 +53,10 @@ input {
   vertical-align: center;
 }
 
+#selected-square{
+  border: 1px red solid !important;
+}
+
 .key{
   width: 3rem;
   height: 3rem;

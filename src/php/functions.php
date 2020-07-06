@@ -115,7 +115,7 @@ function updatePosition($key) {
 
     case 'W':
 
-      if($currentPosition['y_axis'] == 31){
+      if($currentPosition['y_axis'] == 30){
         $futurePosition['y_axis'] = 0;
         $futurePosition['x_axis'] = $currentPosition['x_axis'];
       } else {
@@ -127,7 +127,7 @@ function updatePosition($key) {
     case 'A':
 
       if($currentPosition['x_axis'] == 0){
-        $futurePosition['x_axis'] = 31;
+        $futurePosition['x_axis'] = 30;
         $futurePosition['y_axis'] = $currentPosition['y_axis'];
       } else {
         $futurePosition['x_axis']--;
@@ -137,22 +137,22 @@ function updatePosition($key) {
 
     case 'S':
 
-      if($currentPosition['x_axis'] == 0){
-        $futurePosition['x_axis'] = 31;
-        $futurePosition['y_axis'] = $currentPosition['y_axis'];
-      } else {
-        $futurePosition['x_axis']++;
-        $futurePosition['y_axis'] = $currentPosition['y_axis'];
-      }
-      break;
-
-    case 'D':
-      if($currentPosition['y_axis'] == 31){
-        $futurePosition['y_axis'] = 0;
+      if($currentPosition['y_axis'] == 0){
+        $futurePosition['y_axis'] = 30;
         $futurePosition['x_axis'] = $currentPosition['x_axis'];
       } else {
         $futurePosition['y_axis']--;
         $futurePosition['x_axis'] = $currentPosition['x_axis'];
+      }
+      break;
+
+    case 'D':
+      if($currentPosition['x_axis'] == 30){
+        $futurePosition['x_axis'] = 0;
+        $futurePosition['y_axis'] = $currentPosition['y_axis'];
+      } else {
+        $futurePosition['x_axis']++;
+        $futurePosition['y_axis'] = $currentPosition['y_axis'];
       }
       break;
 
