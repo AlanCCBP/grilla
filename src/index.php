@@ -13,7 +13,7 @@
         Descomentar la función para realizar la creación inicial.
         Luego volver a comentar :P
       */
-      //createGrill(32, 32, "color-white");
+      //createGrill(32, 32, "color-default");
 
       // Nos traemos todas las filas de la DB que dio por resultado nuestra query.
       $squares = getAllSquares();
@@ -30,7 +30,7 @@
         tener el borde resaltado, así le mostramos al usuario dónde está parado.
       */
       $currentPosition = getCurrentPosition();
-      echo $currentPosition['color_class'];
+      
       /*
         Abrimos la primera etiqueta que va a crear una table row (fila).
         La vamos a cerrar a medida que vayamos completando la creación de los TD
